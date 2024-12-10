@@ -7,13 +7,13 @@ spool 325query-results.txt
 prompt 1. List of all currently available items for sale
 SELECT * 
 FROM Item 
-WHERE on_receipt = NULL;
+WHERE on_receipt IS NULL;
 
 prompt 2. Average price of all items ever sold
 
 SELECT AVG(item_price)
 FROM Item
-WHERE on_receipt != NULL;
+WHERE on_receipt IS NOT NULL;
 
 prompt 3. Highest receipt total in the last 6 months
 
@@ -55,32 +55,63 @@ FROM RewardsMember;
 
 prompt 9. List of RewardsMembers who have attended an Event in the last 12 months
 
-
+SELECT rm.cust_id, rm.member_rank
+FROM RewardsMember rm
+JOIN Attendee a ON rm.cust_id = a.cust_id
+JOIN Event e ON e.event_id = a.event_id
+WHERE e.event_date > '2023-12-07';
 
 prompt 10. ID of each Manager for each Employee
 
-SELECT empl_id
+SELECT m.mgr_id
+FROM ManagerManagesManagees
+GROUP BY empl_id;
 
 prompt 11. Items that cost more than the average item price
 
+SELECT item_id, item_desc, item_price
+FROM Item
+WHERE item_price > (SELECT avg(item_price)
+                    FROM Item);
+
+-- TODO: #1 Consider changing this one to a timesheet query since we cant do this with current attributes
 prompt 12. Items that have been on shelves for over a year
+
 
 prompt 13. Customers with total purchases greater than average
 
+SELECT cust_id, SUM(receipt_total)
+FROM Customer c
+JOIN Receipt r ON c.cust_id = r.cust_id
+GROUP BY cust_id
+HAVING SUM(receipt_total) > (SELECT AVG(receipt_total)
+                             FROM Receipt)
+ORDER BY SUM(receipt_total) desc;
+
 prompt 14. Receipts with totals greater than the average Receipt total
 
-SELECT receipt_id
+SELECT receipt_id, receipt_total
 FROM receipt 
-WHERE receipt_total > (SELECT receipt_total(AVG)
+WHERE receipt_total > (SELECT avg(receipt_total)
                        FROM receipt);
 
 prompt 15. List of all Items grouped into Departments
 
-prompt 16. Items donated grouped with their Donators
+SELECT item_id, item_desc, item_price
+FROM Item
+GROUP BY dept_id;
 
-prompt 17. Items sold grouped by reciept
+prompt 16. Items donated grouped by Donator
+
+prompt 17. Items sold grouped by receipt
+
+
 
 prompt 18. Reciepts where the total is over $200 and was before 1 month ago
+
+SELECT receipt_id, receipt_total, receipt_date
+FROM Receipt
+WHERE receipt_total > 200 AND receipt_date < '2024-11-07';
 
 prompt 19. Employees who have been hired for over 1 year and have salary under 50k
 
