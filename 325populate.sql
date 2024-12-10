@@ -20,6 +20,9 @@ DELETE FROM ManagerManagesManagees;
 PROMPT Deleting data from Event
 DELETE FROM Event;
 
+PROMPT Deleting data from TimeSheet
+DELETE FROM TimeSheet;
+
 PROMPT Deleting data from Item
 DELETE FROM Item;
 
@@ -121,7 +124,7 @@ INSERT INTO Receipt (receipt_id, receipt_date, receipt_total, cust_id) VALUES (1
 INSERT INTO Receipt (receipt_id, receipt_date, receipt_total, cust_id) VALUES (11, DATE '2024-11-30', 180.50, 11);
 INSERT INTO Receipt (receipt_id, receipt_date, receipt_total, cust_id) VALUES (12, DATE '2024-12-02', 220.00, 12);
 INSERT INTO Receipt (receipt_id, receipt_date, receipt_total, cust_id) VALUES (13, DATE '2024-12-05', 130.75, 13);
-INSERT INTO Receipt (receipt_id, receipt_date, receipt_total, cust_id) VALUES (14, DATE '2024-12-08', 95.20, 14);
+INSERT INTO Receipt (receipt_id, receipt_date, receipt_total, cust_id) VALUES (14, DATE '2024-12-08', 95.20, 14);9
 INSERT INTO Receipt (receipt_id, receipt_date, receipt_total, cust_id) VALUES (15, DATE '2024-12-10', 250.00, 15);
 
 -- Inserting into RewardsMember
@@ -178,6 +181,27 @@ INSERT INTO Employee (empl_id, empl_start_date, empl_salary) VALUES (13, DATE '2
 INSERT INTO Employee (empl_id, empl_start_date, empl_salary) VALUES (14, DATE '2022-07-07', 60000);
 INSERT INTO Employee (empl_id, empl_start_date, empl_salary) VALUES (15, DATE '2023-09-15', 59000);
 
+-- Inserting into TimeSheet
+-- TO_DATE('2024-12-09 19:45:30', 'YYYY-MM-DD HH24:MI:SS')
+
+INSERT INTO TimeSheet (time_sheet_id, empl_id, clock_in, clock_out) VALUES (1, 1, '2024-04-01 07:30:00', '2024-04-01 16:30:00');
+INSERT INTO TimeSheet (time_sheet_id, empl_id, clock_in, clock_out) VALUES (2, 2, '2024-04-01 08:00:00', '2024-04-01 17:00:00');
+INSERT INTO TimeSheet (time_sheet_id, empl_id, clock_in, clock_out) VALUES (3, 3, '2024-04-01 09:00:00', '2024-04-01 18:00:00');
+INSERT INTO TimeSheet (time_sheet_id, empl_id, clock_in, clock_out) VALUES (4, 4, '2024-04-01 07:15:00', '2024-04-01 16:15:00');
+INSERT INTO TimeSheet (time_sheet_id, empl_id, clock_in, clock_out) VALUES (5, 5, '2024-04-01 08:45:00', '2024-04-01 17:45:00');
+INSERT INTO TimeSheet (time_sheet_id, empl_id, clock_in, clock_out) VALUES (6, 6, '2024-04-01 07:00:00', '2024-04-01 16:00:00');
+INSERT INTO TimeSheet (time_sheet_id, empl_id, clock_in, clock_out) VALUES (7, 7, '2024-04-01 08:00:30', '2024-04-01 17:00:30'); 
+INSERT INTO TimeSheet (time_sheet_id, empl_id, clock_in, clock_out) VALUES (8, 8, '2024-04-01 09:00:00', '2024-04-02 18:00:00'); 
+INSERT INTO TimeSheet (time_sheet_id, empl_id, clock_in, clock_out) VALUES (9, 9, '2024-04-01 07:30:00', '2024-04-02 16:30:00');
+INSERT INTO TimeSheet (time_sheet_id, empl_id, clock_in, clock_out) VALUES (10, 10, '2024-04-02 08:15:00', '2024-04-02 17:15:00');
+INSERT INTO TimeSheet (time_sheet_id, empl_id, clock_in, clock_out) VALUES (11, 1, '2024-04-02 07:45:00', '2024-04-02 16:45:00');
+INSERT INTO TimeSheet (time_sheet_id, empl_id, clock_in, clock_out) VALUES (12, 2, '2024-04-02 08:30:00', '2024-04-02 17:30:00');
+INSERT INTO TimeSheet (time_sheet_id, empl_id, clock_in, clock_out) VALUES (13, 3, '2024-04-02 07:00:00', '2024-04-02 16:00:00');
+INSERT INTO TimeSheet (time_sheet_id, empl_id, clock_in, clock_out) VALUES (14, 4, '2024-04-02 09:00:00', '2024-04-02 18:00:00');
+INSERT INTO TimeSheet (time_sheet_id, empl_id, clock_in, clock_out) VALUES (15, 5, '2024-04-02 08:00:00', '2024-04-02 17:00:00');
+
+
+
 -- Inserting into Manager
 PROMPT Inserting data into Manager
 INSERT INTO Manager (mgr_id, mgr_start_date, mgr_salary) VALUES (1, DATE '2021-05-01', 80000);
@@ -213,6 +237,12 @@ INSERT INTO ManagerManagesManagees (empl_id, mgr_id) VALUES (12, 12);
 INSERT INTO ManagerManagesManagees (empl_id, mgr_id) VALUES (13, 13);
 INSERT INTO ManagerManagesManagees (empl_id, mgr_id) VALUES (14, 14);
 INSERT INTO ManagerManagesManagees (empl_id, mgr_id) VALUES (15, 15);
+INSERT INTO ManagerManagesManagees (empl_id, mgr_id) VALUES (3, 5);
+INSERT INTO ManagerManagesManagees (empl_id, mgr_id) VALUES (6, 1);
+INSERT INTO ManagerManagesManagees (empl_id, mgr_id) VALUES (1, 6);
+INSERT INTO ManagerManagesManagees (empl_id, mgr_id) VALUES (1, 8);
+INSERT INTO ManagerManagesManagees (empl_id, mgr_id) VALUES (2, 9);
+INSERT INTO ManagerManagesManagees (empl_id, mgr_id) VALUES (5, 1);
 
 -- Inserting into Event
 PROMPT Inserting data into Event

@@ -59,7 +59,7 @@ prompt 9. List of RewardsMembers who have attended an Event in the last 12 month
 
 prompt 10. ID of each Manager for each Employee
 
-SELECT 
+SELECT empl_id
 
 prompt 11. Items that cost more than the average item price
 
