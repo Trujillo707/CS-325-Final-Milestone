@@ -115,6 +115,10 @@ WHERE receipt_total > 200 AND receipt_date < '2024-11-07';
 
 prompt 19. Employees who have been hired for over 1 year and have salary under 50k
 
+SELECT *
+FROM Employee
+WHERE empl_start_date > '2023-12-07' AND empl_salary < 50000;
+
 prompt 20. RewardsMember who are member_rank = 3 and have been signed up for 3 months
 
 prompt 21. Appraised items grouped by their Appraiser
