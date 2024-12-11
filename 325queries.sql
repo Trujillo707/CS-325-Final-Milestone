@@ -63,9 +63,9 @@ WHERE e.event_date > '2023-12-07';
 
 prompt 10. ID of each Manager for each Employee
 
-SELECT m.mgr_id
+SELECT empl_id as employee_id, mgr_id as manager_id
 FROM ManagerManagesManagees
-GROUP BY empl_id;
+ORDER BY empl_id;
 
 prompt 11. Items that cost more than the average item price
 
@@ -95,15 +95,21 @@ FROM receipt
 WHERE receipt_total > (SELECT avg(receipt_total)
                        FROM receipt);
 
-prompt 15. List of all Items grouped into Departments
+prompt 15. Sum of the value of items in each Department
 
-SELECT item_id, item_desc, item_price
-FROM Item
-GROUP BY dept_id;
+SELECT d.dept_id, d.dept_name, SUM(i.item_price)
+FROM Item i
+JOIN Department d ON i.dept_id = d.dept_id
+GROUP BY i.dept_id;
 
-prompt 16. Items donated grouped by Donator
+prompt 16. Number of purchases placed per Customer
 
-prompt 17. Items sold grouped by receipt
+SELECT c.cust_id, COUNT(*) as number_of_purchases
+FROM Customer c 
+JOIN Receipt r ON c.cust_id = r.cust_id
+GROUP BY c.cust_id;
+
+prompt 17. 
 
 
 
@@ -121,10 +127,10 @@ WHERE empl_start_date > '2023-12-07' AND empl_salary < 50000;
 
 prompt 20. RewardsMember who are member_rank = 3 and have been signed up for 3 months
 
-prompt 21. Appraised items grouped by their Appraiser
+prompt 21. 
 
 prompt 22. Employees who earn more than the average employee salary
 
-prompt 23. Items that were donated within the last year
+prompt 23. 
 
-prompt 24. Groups of items that were in events
+prompt 24. List of items that were in events

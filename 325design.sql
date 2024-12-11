@@ -1,7 +1,7 @@
 /*
 Carson Gustafson Dylan Westigard Orlando Trujillo Ortiz
 CS 325 Fall 2024
-11/18/24
+12/07/24
 */
 
 drop table Department cascade constraints;
@@ -10,7 +10,7 @@ create table Department(
 dept_id integer,
 dept_name varchar2(18),
 dept_total_inv integer,
-primary key (dept_id)f
+primary key (dept_id)
 );
 
 drop table Appraiser cascade constraints;
