@@ -25,6 +25,7 @@ WHERE clock_in BETWEEN TO_DATE('2024-01-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS')
 
 spool off
 
+set pagesize 40
 set linesize 80
 ttitle off
 clear columns

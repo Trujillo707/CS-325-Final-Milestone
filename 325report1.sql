@@ -2,7 +2,7 @@
 -- CS 325 - Fall 2024
 -- 12/10/24
 
--- This a report of all the customer's that have receipt totals more than the average receipt
+-- This a report of all the customer's that have spent more than the average receipt
 
 spool 325report1-results.txt
 
@@ -22,7 +22,10 @@ HAVING SUM(receipt_total) > (SELECT AVG(receipt_total)
                              FROM Receipt)
 ORDER BY SUM(receipt_total) desc;
 
-clear columns 
-ttitle off
+
 
 spool off
+
+set linesize 80
+clear columns 
+ttitle off

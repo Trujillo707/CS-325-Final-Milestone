@@ -24,6 +24,6 @@ ORDER BY c.cust_id;
 
 spool off
 
-set linesize 80
+set pagesize 40
 ttitle off
 clear columns
