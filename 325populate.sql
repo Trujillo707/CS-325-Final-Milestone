@@ -182,7 +182,7 @@ INSERT INTO Employee (empl_id, empl_start_date, empl_salary) VALUES (14, DATE '2
 INSERT INTO Employee (empl_id, empl_start_date, empl_salary) VALUES (15, DATE '2023-09-15', 59000);
 
 -- Inserting into TimeSheet
--- TO_DATE('2024-12-09 19:45:30', 'YYYY-MM-DD HH24:MI:SS')
+-- Consider TO_DATE('2024-12-09 19:45:30', 'YYYY-MM-DD HH24:MI:SS')
 
 INSERT INTO TimeSheet (time_sheet_id, empl_id, clock_in, clock_out) VALUES (1, 1, '2024-04-01 07:30:00', '2024-04-01 16:30:00');
 INSERT INTO TimeSheet (time_sheet_id, empl_id, clock_in, clock_out) VALUES (2, 2, '2024-04-01 08:00:00', '2024-04-01 17:00:00');
@@ -199,6 +199,9 @@ INSERT INTO TimeSheet (time_sheet_id, empl_id, clock_in, clock_out) VALUES (12, 
 INSERT INTO TimeSheet (time_sheet_id, empl_id, clock_in, clock_out) VALUES (13, 3, '2024-04-02 07:00:00', '2024-04-02 16:00:00');
 INSERT INTO TimeSheet (time_sheet_id, empl_id, clock_in, clock_out) VALUES (14, 4, '2024-04-02 09:00:00', '2024-04-02 18:00:00');
 INSERT INTO TimeSheet (time_sheet_id, empl_id, clock_in, clock_out) VALUES (15, 5, '2024-04-02 08:00:00', '2024-04-02 17:00:00');
+INSERT INTO TimeSheet (time_sheet_id, empl_id, clock_in) VALUES (16, 6, '2024-04-04 07:00:00');
+INSERT INTO TimeSheet (time_sheet_id, empl_id, clock_in) VALUES (17, 1, '2024-04-04 07:45:00');
+INSERT INTO TimeSheet (time_sheet_id, empl_id, clock_in) VALUES (18, 5, '2024-04-04 08:45:00');
 
 
 

@@ -74,8 +74,11 @@ FROM Item
 WHERE item_price > (SELECT avg(item_price)
                     FROM Item);
 
--- TODO: #1 Consider changing this one to a timesheet query since we cant do this with current attributes
-prompt 12. Items that have been on shelves for over a year
+prompt 12. List of all timesheet entries of 2024
+
+SELECT time_sheet_id, empl_id, clock_in, clock_out
+FROM TimeSheet
+WHERE clock_in BETWEEN '2024-01-01 00:00:00' AND '2024-12-31 23:59:59';
 
 
 prompt 13. Customers with total purchases greater than average
@@ -109,8 +112,10 @@ FROM Customer c
 JOIN Receipt r ON c.cust_id = r.cust_id
 GROUP BY c.cust_id;
 
-prompt 17. 
+prompt 17. List of Employees who have clocked in but have not clocked out yet
 
+SELECT time_sheet_id, empl_id, clock_in, SYSDATE - clock_in as time_clocked_in
+FROM TimeSheet
 
 
 prompt 18. Reciepts where the total is over $200 and was before 1 month ago
@@ -134,3 +139,5 @@ prompt 22. Employees who earn more than the average employee salary
 prompt 23. 
 
 prompt 24. List of items that were in events
+
+spool off
