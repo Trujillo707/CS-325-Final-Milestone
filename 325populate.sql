@@ -113,18 +113,18 @@ INSERT INTO Customer (cust_id, cust_age) VALUES (15, 55);
 PROMPT Inserting data into Receipt
 INSERT INTO Receipt (receipt_id, receipt_date, receipt_total, cust_id) VALUES (1, DATE '2024-11-01', 150.75, 1);
 INSERT INTO Receipt (receipt_id, receipt_date, receipt_total, cust_id) VALUES (2, DATE '2024-11-05', 89.50, 2);
-INSERT INTO Receipt (receipt_id, receipt_date, receipt_total, cust_id) VALUES (3, DATE '2024-11-10', 230.00, 3);
+INSERT INTO Receipt (receipt_id, receipt_date, receipt_total, cust_id) VALUES (3, DATE '2024-11-10', 230.00, 1);
 INSERT INTO Receipt (receipt_id, receipt_date, receipt_total, cust_id) VALUES (4, DATE '2024-11-12', 120.00, 4);
 INSERT INTO Receipt (receipt_id, receipt_date, receipt_total, cust_id) VALUES (5, DATE '2024-11-15', 75.25, 5);
-INSERT INTO Receipt (receipt_id, receipt_date, receipt_total, cust_id) VALUES (6, DATE '2024-11-18', 310.40, 6);
+INSERT INTO Receipt (receipt_id, receipt_date, receipt_total, cust_id) VALUES (6, DATE '2024-11-18', 310.40, 1);
 INSERT INTO Receipt (receipt_id, receipt_date, receipt_total, cust_id) VALUES (7, DATE '2024-11-20', 45.60, 7);
-INSERT INTO Receipt (receipt_id, receipt_date, receipt_total, cust_id) VALUES (8, DATE '2024-11-22', 200.00, 8);
+INSERT INTO Receipt (receipt_id, receipt_date, receipt_total, cust_id) VALUES (8, DATE '2024-11-22', 200.00, 3);
 INSERT INTO Receipt (receipt_id, receipt_date, receipt_total, cust_id) VALUES (9, DATE '2024-11-25', 160.80, 9);
-INSERT INTO Receipt (receipt_id, receipt_date, receipt_total, cust_id) VALUES (10, DATE '2024-11-28', 99.99, 10);
-INSERT INTO Receipt (receipt_id, receipt_date, receipt_total, cust_id) VALUES (11, DATE '2024-11-30', 180.50, 11);
-INSERT INTO Receipt (receipt_id, receipt_date, receipt_total, cust_id) VALUES (12, DATE '2024-12-02', 220.00, 12);
+INSERT INTO Receipt (receipt_id, receipt_date, receipt_total, cust_id) VALUES (10, DATE '2024-11-28', 99.99, 3);
+INSERT INTO Receipt (receipt_id, receipt_date, receipt_total, cust_id) VALUES (11, DATE '2024-11-30', 180.50, 2);
+INSERT INTO Receipt (receipt_id, receipt_date, receipt_total, cust_id) VALUES (12, DATE '2024-12-02', 220.00, 3);
 INSERT INTO Receipt (receipt_id, receipt_date, receipt_total, cust_id) VALUES (13, DATE '2024-12-05', 130.75, 13);
-INSERT INTO Receipt (receipt_id, receipt_date, receipt_total, cust_id) VALUES (14, DATE '2024-12-08', 95.20, 14);9
+INSERT INTO Receipt (receipt_id, receipt_date, receipt_total, cust_id) VALUES (14, DATE '2024-12-08', 95.20, 2);
 INSERT INTO Receipt (receipt_id, receipt_date, receipt_total, cust_id) VALUES (15, DATE '2024-12-10', 250.00, 15);
 
 -- Inserting into RewardsMember
@@ -165,11 +165,11 @@ INSERT INTO Donator (donator_id) VALUES (15);
 
 -- Inserting into Employee
 PROMPT Inserting data into Employee
-INSERT INTO Employee (empl_id, empl_start_date, empl_salary) VALUES (1, DATE '2023-06-01', 60000);
-INSERT INTO Employee (empl_id, empl_start_date, empl_salary) VALUES (2, DATE '2022-09-15', 55000);
+INSERT INTO Employee (empl_id, empl_start_date, empl_salary) VALUES (1, DATE '2023-06-01', 19000);
+INSERT INTO Employee (empl_id, empl_start_date, empl_salary) VALUES (2, DATE '2022-09-15', 45000);
 INSERT INTO Employee (empl_id, empl_start_date, empl_salary) VALUES (3, DATE '2024-01-20', 58000);
-INSERT INTO Employee (empl_id, empl_start_date, empl_salary) VALUES (4, DATE '2021-03-10', 62000);
-INSERT INTO Employee (empl_id, empl_start_date, empl_salary) VALUES (5, DATE '2023-07-22', 59000);
+INSERT INTO Employee (empl_id, empl_start_date, empl_salary) VALUES (4, DATE '2021-03-10', 42000);
+INSERT INTO Employee (empl_id, empl_start_date, empl_salary) VALUES (5, DATE '2023-07-22', 55000);
 INSERT INTO Employee (empl_id, empl_start_date, empl_salary) VALUES (6, DATE '2022-11-05', 61000);
 INSERT INTO Employee (empl_id, empl_start_date, empl_salary) VALUES (7, DATE '2024-02-14', 57000);
 INSERT INTO Employee (empl_id, empl_start_date, empl_salary) VALUES (8, DATE '2023-04-18', 63000);
@@ -184,26 +184,24 @@ INSERT INTO Employee (empl_id, empl_start_date, empl_salary) VALUES (15, DATE '2
 -- Inserting into TimeSheet
 -- Consider TO_DATE('2024-12-09 19:45:30', 'YYYY-MM-DD HH24:MI:SS')
 
-INSERT INTO TimeSheet (time_sheet_id, empl_id, clock_in, clock_out) VALUES (1, 1, '2024-04-01 07:30:00', '2024-04-01 16:30:00');
-INSERT INTO TimeSheet (time_sheet_id, empl_id, clock_in, clock_out) VALUES (2, 2, '2024-04-01 08:00:00', '2024-04-01 17:00:00');
-INSERT INTO TimeSheet (time_sheet_id, empl_id, clock_in, clock_out) VALUES (3, 3, '2024-04-01 09:00:00', '2024-04-01 18:00:00');
-INSERT INTO TimeSheet (time_sheet_id, empl_id, clock_in, clock_out) VALUES (4, 4, '2024-04-01 07:15:00', '2024-04-01 16:15:00');
-INSERT INTO TimeSheet (time_sheet_id, empl_id, clock_in, clock_out) VALUES (5, 5, '2024-04-01 08:45:00', '2024-04-01 17:45:00');
-INSERT INTO TimeSheet (time_sheet_id, empl_id, clock_in, clock_out) VALUES (6, 6, '2024-04-01 07:00:00', '2024-04-01 16:00:00');
-INSERT INTO TimeSheet (time_sheet_id, empl_id, clock_in, clock_out) VALUES (7, 7, '2024-04-01 08:00:30', '2024-04-01 17:00:30'); 
-INSERT INTO TimeSheet (time_sheet_id, empl_id, clock_in, clock_out) VALUES (8, 8, '2024-04-01 09:00:00', '2024-04-02 18:00:00'); 
-INSERT INTO TimeSheet (time_sheet_id, empl_id, clock_in, clock_out) VALUES (9, 9, '2024-04-01 07:30:00', '2024-04-02 16:30:00');
-INSERT INTO TimeSheet (time_sheet_id, empl_id, clock_in, clock_out) VALUES (10, 10, '2024-04-02 08:15:00', '2024-04-02 17:15:00');
-INSERT INTO TimeSheet (time_sheet_id, empl_id, clock_in, clock_out) VALUES (11, 1, '2024-04-02 07:45:00', '2024-04-02 16:45:00');
-INSERT INTO TimeSheet (time_sheet_id, empl_id, clock_in, clock_out) VALUES (12, 2, '2024-04-02 08:30:00', '2024-04-02 17:30:00');
-INSERT INTO TimeSheet (time_sheet_id, empl_id, clock_in, clock_out) VALUES (13, 3, '2024-04-02 07:00:00', '2024-04-02 16:00:00');
-INSERT INTO TimeSheet (time_sheet_id, empl_id, clock_in, clock_out) VALUES (14, 4, '2024-04-02 09:00:00', '2024-04-02 18:00:00');
-INSERT INTO TimeSheet (time_sheet_id, empl_id, clock_in, clock_out) VALUES (15, 5, '2024-04-02 08:00:00', '2024-04-02 17:00:00');
-INSERT INTO TimeSheet (time_sheet_id, empl_id, clock_in) VALUES (16, 6, '2024-04-04 07:00:00');
-INSERT INTO TimeSheet (time_sheet_id, empl_id, clock_in) VALUES (17, 1, '2024-04-04 07:45:00');
-INSERT INTO TimeSheet (time_sheet_id, empl_id, clock_in) VALUES (18, 5, '2024-04-04 08:45:00');
-
-
+INSERT INTO TimeSheet (time_sheet_id, empl_id, clock_in, clock_out) VALUES (1, 1, TO_DATE('2024-04-01 07:30:00', 'YYYY-MM-DD HH24:MI:SS'), TO_DATE('2024-04-01 16:30:00', 'YYYY-MM-DD HH24:MI:SS'));
+INSERT INTO TimeSheet (time_sheet_id, empl_id, clock_in, clock_out) VALUES (2, 2, TO_DATE('2024-04-01 08:00:00', 'YYYY-MM-DD HH24:MI:SS'), TO_DATE('2024-04-01 17:00:00', 'YYYY-MM-DD HH24:MI:SS'));
+INSERT INTO TimeSheet (time_sheet_id, empl_id, clock_in, clock_out) VALUES (3, 3, TO_DATE('2024-04-01 09:00:00', 'YYYY-MM-DD HH24:MI:SS'), TO_DATE('2024-04-01 18:00:00', 'YYYY-MM-DD HH24:MI:SS'));
+INSERT INTO TimeSheet (time_sheet_id, empl_id, clock_in, clock_out) VALUES (4, 4, TO_DATE('2024-04-01 07:15:00', 'YYYY-MM-DD HH24:MI:SS'), TO_DATE('2024-04-01 16:15:00', 'YYYY-MM-DD HH24:MI:SS'));
+INSERT INTO TimeSheet (time_sheet_id, empl_id, clock_in, clock_out) VALUES (5, 5, TO_DATE('2024-04-01 08:45:00', 'YYYY-MM-DD HH24:MI:SS'), TO_DATE('2024-04-01 17:45:00', 'YYYY-MM-DD HH24:MI:SS'));
+INSERT INTO TimeSheet (time_sheet_id, empl_id, clock_in, clock_out) VALUES (6, 6, TO_DATE('2024-04-01 07:00:00', 'YYYY-MM-DD HH24:MI:SS'), TO_DATE('2024-04-01 16:00:00', 'YYYY-MM-DD HH24:MI:SS'));
+INSERT INTO TimeSheet (time_sheet_id, empl_id, clock_in, clock_out) VALUES (7, 7, TO_DATE('2024-04-01 08:00:30', 'YYYY-MM-DD HH24:MI:SS'), TO_DATE('2024-04-01 17:00:30', 'YYYY-MM-DD HH24:MI:SS'));
+INSERT INTO TimeSheet (time_sheet_id, empl_id, clock_in, clock_out) VALUES (8, 8, TO_DATE('2024-04-01 09:00:00', 'YYYY-MM-DD HH24:MI:SS'), TO_DATE('2024-04-02 18:00:00', 'YYYY-MM-DD HH24:MI:SS'));
+INSERT INTO TimeSheet (time_sheet_id, empl_id, clock_in, clock_out) VALUES (9, 9, TO_DATE('2024-04-01 07:30:00', 'YYYY-MM-DD HH24:MI:SS'), TO_DATE('2024-04-02 16:30:00', 'YYYY-MM-DD HH24:MI:SS'));
+INSERT INTO TimeSheet (time_sheet_id, empl_id, clock_in, clock_out) VALUES (10, 10, TO_DATE('2024-04-02 08:15:00', 'YYYY-MM-DD HH24:MI:SS'), TO_DATE('2024-04-02 17:15:00', 'YYYY-MM-DD HH24:MI:SS'));
+INSERT INTO TimeSheet (time_sheet_id, empl_id, clock_in, clock_out) VALUES (11, 1, TO_DATE('2024-04-02 07:45:00', 'YYYY-MM-DD HH24:MI:SS'), TO_DATE('2024-04-02 16:45:00', 'YYYY-MM-DD HH24:MI:SS'));
+INSERT INTO TimeSheet (time_sheet_id, empl_id, clock_in, clock_out) VALUES (12, 2, TO_DATE('2024-04-02 08:30:00', 'YYYY-MM-DD HH24:MI:SS'), TO_DATE('2024-04-02 17:30:00', 'YYYY-MM-DD HH24:MI:SS'));
+INSERT INTO TimeSheet (time_sheet_id, empl_id, clock_in, clock_out) VALUES (13, 3, TO_DATE('2024-04-02 07:00:00', 'YYYY-MM-DD HH24:MI:SS'), TO_DATE('2024-04-02 16:00:00', 'YYYY-MM-DD HH24:MI:SS'));
+INSERT INTO TimeSheet (time_sheet_id, empl_id, clock_in, clock_out) VALUES (14, 4, TO_DATE('2024-04-02 09:00:00', 'YYYY-MM-DD HH24:MI:SS'), TO_DATE('2024-04-02 18:00:00', 'YYYY-MM-DD HH24:MI:SS'));
+INSERT INTO TimeSheet (time_sheet_id, empl_id, clock_in, clock_out) VALUES (15, 5, TO_DATE('2024-04-02 08:00:00', 'YYYY-MM-DD HH24:MI:SS'), TO_DATE('2024-04-02 17:00:00', 'YYYY-MM-DD HH24:MI:SS'));
+INSERT INTO TimeSheet (time_sheet_id, empl_id, clock_in) VALUES (16, 6, TO_DATE('2024-04-04 07:00:00', 'YYYY-MM-DD HH24:MI:SS'));
+INSERT INTO TimeSheet (time_sheet_id, empl_id, clock_in) VALUES (17, 1, TO_DATE('2024-04-04 07:45:00', 'YYYY-MM-DD HH24:MI:SS'));
+INSERT INTO TimeSheet (time_sheet_id, empl_id, clock_in) VALUES (18, 5, TO_DATE('2024-04-04 08:45:00', 'YYYY-MM-DD HH24:MI:SS'));
 
 -- Inserting into Manager
 PROMPT Inserting data into Manager
@@ -268,17 +266,17 @@ INSERT INTO Event (event_id, event_date) VALUES (15, DATE '2025-03-01');
 -- Inserting into EventOrganizer
 PROMPT Inserting data into EventOrganizer
 INSERT INTO EventOrganizer (empl_id, event_id) VALUES (1, 1);
-INSERT INTO EventOrganizer (empl_id, event_id) VALUES (2, 2);
-INSERT INTO EventOrganizer (empl_id, event_id) VALUES (3, 3);
-INSERT INTO EventOrganizer (empl_id, event_id) VALUES (4, 4);
-INSERT INTO EventOrganizer (empl_id, event_id) VALUES (5, 5);
-INSERT INTO EventOrganizer (empl_id, event_id) VALUES (6, 6);
-INSERT INTO EventOrganizer (empl_id, event_id) VALUES (7, 7);
+INSERT INTO EventOrganizer (empl_id, event_id) VALUES (1, 2);
+INSERT INTO EventOrganizer (empl_id, event_id) VALUES (1, 3);
+INSERT INTO EventOrganizer (empl_id, event_id) VALUES (3, 4);
+INSERT INTO EventOrganizer (empl_id, event_id) VALUES (3, 5);
+INSERT INTO EventOrganizer (empl_id, event_id) VALUES (5, 6);
+INSERT INTO EventOrganizer (empl_id, event_id) VALUES (6, 7);
 INSERT INTO EventOrganizer (empl_id, event_id) VALUES (8, 8);
 INSERT INTO EventOrganizer (empl_id, event_id) VALUES (9, 9);
-INSERT INTO EventOrganizer (empl_id, event_id) VALUES (10, 10);
+INSERT INTO EventOrganizer (empl_id, event_id) VALUES (11, 10);
 INSERT INTO EventOrganizer (empl_id, event_id) VALUES (11, 11);
-INSERT INTO EventOrganizer (empl_id, event_id) VALUES (12, 12);
+INSERT INTO EventOrganizer (empl_id, event_id) VALUES (13, 12);
 INSERT INTO EventOrganizer (empl_id, event_id) VALUES (13, 13);
 INSERT INTO EventOrganizer (empl_id, event_id) VALUES (14, 14);
 INSERT INTO EventOrganizer (empl_id, event_id) VALUES (15, 15);
@@ -333,6 +331,31 @@ INSERT INTO Item (item_id, item_desc, item_price, item_color, item_size, item_re
 VALUES (14, 'Children''s Bicycle', 120.00, 'Red', 'Small', 0, 14, 6, 14, 14, 14);
 INSERT INTO Item (item_id, item_desc, item_price, item_color, item_size, item_restricted, on_receipt, dept_id, app_id, cust_id, donated_by) 
 VALUES (15, 'Diamond Necklace', 1500.00, 'White', 'N/A', 1, 15, 14, 15, 15, 15);
+
+INSERT INTO Item (item_id, item_desc, item_price, item_color, item_size, item_restricted, on_receipt, dept_id, app_id, cust_id, donated_by) 
+VALUES (16, 'Samurai Sword', 5800.00, 'Red', '6 Feet', 1, NULL, 6, 10, NULL, 5);
+
+INSERT INTO Item (item_id, item_desc, item_price, item_color, item_size, item_restricted, on_receipt, dept_id, app_id, cust_id, donated_by) 
+VALUES (17, 'R.E.M. Jar', 420.69, 'White', 'Small', 1, 11, 11, 11, 11, 1);
+
+
+
+INSERT INTO Item (item_id, item_desc, item_price, item_color, item_size, item_restricted, on_receipt, dept_id, app_id, cust_id, donated_by) 
+VALUES (19, 'Boeing 727', 5.00, 'White', 'Extra Large', 1, 13, 5, 13, 13, 3);
+
+INSERT INTO Item (item_id, item_desc, item_price, item_color, item_size, item_restricted, on_receipt, dept_id, app_id, cust_id, donated_by) 
+VALUES (20, 'Barrel (Contains XXX)', 499.07, 'Dark', 'Large', 1, 14, 11, 14, 14, 6);
+
+INSERT INTO Item (item_id, item_desc, item_price, item_color, item_size, item_restricted, on_receipt, dept_id, app_id, cust_id, donated_by) 
+VALUES (21, 'ICBM', 666.66, 'Grey', 'Extra Large', 1, 8, 14, 15, 8, 15);
+
+INSERT INTO Item (item_id, item_desc, item_price, item_color, item_size, item_restricted, on_receipt, dept_id, app_id, cust_id, donated_by) 
+VALUES (22,'Fluffy Handcuffs', 5.00, 'Pink', 'Small', 1, NULL, 6, 1, NULL, 1);
+
+INSERT INTO Item (item_id, item_desc, item_price, item_color, item_size, item_restricted, on_receipt, dept_id, app_id, cust_id, donated_by) 
+VALUES (23, 'Tennis Racket', 5.00, 'Black', 'Large', 1, NULL, 5, 1, NULL, 15);
+INSERT INTO Item (item_id, item_desc, item_price, item_color, item_size, item_restricted, on_receipt, dept_id, app_id, cust_id, donated_by) 
+VALUES (18, 'Civil War Cannon', 299.00, 'Black', 'Large', 1, NULL, 6, 12, NULL, 3);
 
 -- Inserting into EventItem
 PROMPT Inserting data into EventItem

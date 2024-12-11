@@ -117,7 +117,6 @@ prompt 17. List of Employees who have clocked in but have not clocked out yet
 SELECT time_sheet_id, empl_id, clock_in, SYSDATE - clock_in as time_clocked_in
 FROM TimeSheet
 
-
 prompt 18. Reciepts where the total is over $200 and was before 1 month ago
 
 SELECT receipt_id, receipt_total, receipt_date
@@ -128,16 +127,40 @@ prompt 19. Employees who have been hired for over 1 year and have salary under 5
 
 SELECT *
 FROM Employee
-WHERE empl_start_date > '2023-12-07' AND empl_salary < 50000;
+WHERE empl_start_date < TO_DATE('2023-12-07' ,'YYYY-MM-DD') AND empl_salary < 50000;
 
 prompt 20. RewardsMember who are member_rank = 3 and have been signed up for 3 months
 
-prompt 21. 
+SELECT cust_id, member_date
+FROM RewardsMember
+WHERE member_rank = 3 AND member_date > '2024-09-07';
+
+prompt 21. List of age restricted items 
+
+SELECT *
+FROM Item 
+WHERE item_restricted = 1;
 
 prompt 22. Employees who earn more than the average employee salary
 
-prompt 23. 
+SELECT empl_id, empl_salary
+FROM Employee
+WHERE empl_salary > (SELECT AVG(empl_salary)
+                     FROM Employee);
+
+prompt 23. Donators who have donated more than once 
+
+SELECT donator_id, COUNT(*) as donation_count
+FROM DonationDate 
+GROUP BY donator_id
+HAVING donation_count > 1;
+
 
 prompt 24. List of items that were in events
+
+SELECT item_id, item_desc, item_price, event_date
+FROM Item i
+JOIN EventItem ei ON i.item_id
+JOIN Event e ON e.event_id = ei.event_id;
 
 spool off

@@ -67,7 +67,7 @@ create table TimeSheet (
 time_sheet_id integer,
 empl_id integer,
 clock_in DATE NOT NULL,
-clock_out DATE DEFAULT NULL CHECK (clock_out is null OR clock_out > clock_in ),
+clock_out DATE DEFAULT NULL,
 primary key (time_sheet_id),
 	foreign key (empl_id) references Employee(empl_id));
 
